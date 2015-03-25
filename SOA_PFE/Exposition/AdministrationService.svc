@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SOA_PFE.Exposition.AdministrationService" CodeBehind="AdministrationService.svc.cs" %>

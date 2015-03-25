@@ -73,15 +73,20 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="QueueService.svc" />
+    <Content Include="Exposition\AdministrationService.svc" />
+    <Content Include="Exposition\QueueService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\Model1.cs" />
-    <Compile Include="QueueService.svc.cs">
+    <Compile Include="Exposition\AdministrationService.svc.cs">
+      <DependentUpon>AdministrationService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Exposition\IAdministrationService.cs" />
+    <Compile Include="Exposition\QueueService.svc.cs">
       <DependentUpon>QueueService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IQueueService.cs" />
+    <Compile Include="Exposition\IQueueService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAO\SOA_Gestion_Messages.cs" />
     <Compile Include="DAO\SOA_Messages.cs" />
