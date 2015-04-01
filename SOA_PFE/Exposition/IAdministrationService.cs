@@ -13,6 +13,7 @@ namespace SOA_PFE.Exposition
     {
         [OperationContract]
         bool CreateUser(User u);
+        bool EnvoyerMessage(String idUserToSend, String Message);
 
     }
 
