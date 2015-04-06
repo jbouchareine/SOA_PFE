@@ -7,7 +7,7 @@ using RabbitMQ.Client;
 
 namespace core_queue
 {
-    class sender
+    public class sender
     {
         public static void Sender(String message, string queu)
         {

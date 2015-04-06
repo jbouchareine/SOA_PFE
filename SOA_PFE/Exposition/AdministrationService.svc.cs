@@ -14,13 +14,19 @@ namespace SOA_PFE.Exposition
     public class AdministrationService : IAdministrationService
     {
 
-        UtilisateurService userService = new UtilisateurService();
+        AdminDaoService userService = new AdminDaoService();
 
         public bool CreateUser(User u)
         {
-            bool success = userService.createUser(u.Username, u.Password);
+            bool success = userService.creerUser(u);
 
             return success;
+        }
+
+
+        public bool EnvoyerMessage(string idUserToSend, string Message)
+        {
+            throw new NotImplementedException();
         }
     }
 }

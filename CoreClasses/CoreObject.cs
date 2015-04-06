@@ -12,7 +12,7 @@ namespace CoreClasses
         public String TypeMessage { get; set; }
         public String Message { get; set; }
         public String TypeDestinataire { get; set; }
-        public string idDestinataire { get; set; }
+        public String idDestinataire { get; set; }
 
         public static CoreObject ConverterJsonToObject(string message)
         {

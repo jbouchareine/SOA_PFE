@@ -7,7 +7,7 @@ using CoreClasses;
 
 namespace core_queue
 {
-    class receiver
+    public class receiver
     {
         public static void Receiver()
         {

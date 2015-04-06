@@ -57,6 +57,7 @@
       <HintPath>..\packages\RabbitMQ.ServiceModel.3.5.0\lib\net40\RabbitMQ.ServiceModel.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -78,24 +79,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Exposition\AdministrationService.svc" />
-    <Content Include="Exposition\QueueService.svc" />
+    <Content Include="Exposition\Mobile.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\Model1.cs" />
+    <Compile Include="DAO\datasets\messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>messages.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Exposition\AdministrationService.svc.cs">
       <DependentUpon>AdministrationService.svc</DependentUpon>
     </Compile>
     <Compile Include="Exposition\IAdministrationService.cs" />
-    <Compile Include="Exposition\QueueService.svc.cs">
-      <DependentUpon>QueueService.svc</DependentUpon>
+    <Compile Include="Exposition\IMobile.cs" />
+    <Compile Include="Exposition\Mobile.svc.cs">
+      <DependentUpon>Mobile.svc</DependentUpon>
     </Compile>
-    <Compile Include="Exposition\IQueueService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DAO\SOA_Gestion_Messages.cs" />
-    <Compile Include="DAO\SOA_Messages.cs" />
-    <Compile Include="DAO\SOA_User.cs" />
-    <Compile Include="Services\UtilisateurService.cs" />
+    <Compile Include="Services\AdminDaoMessage.cs" />
+    <Compile Include="Services\MessageDaoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -103,6 +106,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="DAO\datasets\messages.xsc">
+      <DependentUpon>messages.xsd</DependentUpon>
+    </Content>
+    <None Include="DAO\datasets\messages.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>messages.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DAO\datasets\messages.xss">
+      <DependentUpon>messages.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,9 +125,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Admin_queu\Admin_queu.csproj">
+      <Project>{b7e407a6-c278-4d6c-8188-6663367fa607}</Project>
+      <Name>Admin_queu</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CoreClasses\CoreClasses.csproj">
       <Project>{b8ed70cb-5287-47f8-9163-96c2095c951e}</Project>
       <Name>CoreClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mobil_queu\mobil_queu.csproj">
+      <Project>{c87d021a-d58c-4b62-ae39-6a491f5b33bd}</Project>
+      <Name>mobil_queu</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
